@@ -66,6 +66,7 @@ main {
     .flex {
         display: flex;
         margin: 0 auto;
+        justify-content: center;
     }
 
 
@@ -75,13 +76,14 @@ main {
 
         & div {
             & h1 {
+                max-width: 415px;
                 color: rgb(228, 228, 228);
                 font-family: Inter;
                 font-size: 64px;
                 font-weight: 400;
                 line-height: 77px;
                 letter-spacing: 0px;
-                text-align: left;
+                text-align: center;
             }
 
             & h2 {
@@ -112,7 +114,8 @@ main {
         }
 
         .beer_img {
-            width: 221px;
+            max-width: 221px;
+            max-height: auto;
         }
 
         .about_img {
@@ -138,6 +141,17 @@ iframe {
     border-radius: 20px;
 }
 
+.video {
+    display: block;
+    justify-content: center;
+    align-content: center;
+}
+
+.video_box {
+    display: block;
+    justify-content: center;
+    align-content: center;
+}
 
 .about {
 
@@ -171,7 +185,7 @@ iframe {
     margin: 30px 0;
 }
 
-.galery_block {
+.gallery_block {
 
     justify-content: center;
     flex-wrap: wrap;
@@ -181,12 +195,17 @@ iframe {
     & img {
         border-radius: 20px;
     }
+
+    .gallery_img {
+        max-width: 640px;
+        max-height: 360px;
+    }
 }
 
 footer {
     padding: 50px 0;
 
-    & nav{
+    & nav {
 
         display: flex;
         margin: 0 auto;
@@ -197,7 +216,7 @@ footer {
         align-items: center;
 
         &,
-        &div:last-of-type{
+        &div:last-of-type {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -222,4 +241,22 @@ p {
     font-weight: 400;
     letter-spacing: 0px;
     text-align: center;
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (width < 770px) {
+    header {
+        & nav {
+            & ul {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+    }
 }
